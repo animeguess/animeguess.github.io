@@ -21,14 +21,13 @@ var listaAnime = [
 document
   .querySelector('input[type="button"]')
   .addEventListener("click", function () {
-    listaAnime.splice(losuj, 1);
-    console.log(listaAnime);
     if (document.getElementById("myInput").value == listaAnime[losuj]) {
       punkty++;
       punktmax++;
     } else {
       punktmax++;
     }
+    listaAnime.splice(losuj, 1);
     document.getElementById("punkciki").innerHTML = punkty + "/" + punktmax;
     losuj = Math.floor(Math.random() * (listaAnime.length - 0)) + 0;
     document.querySelector("img").src = "img/" + listaAnime[losuj] + ".jpg";
